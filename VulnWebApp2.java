@@ -34,12 +34,12 @@ public class InfrastructureVulns {
         return builder.parse(xml);
     }
 
-    // 3. Weak Hash (Medium)
+    // 3. Secure Hash (SHA-256 replaces broken MD5)
     public byte[] md5(String input)
             throws Exception {
 
         return MessageDigest
-                .getInstance("MD5")
+                .getInstance("SHA-256")
                 .digest(input.getBytes());
     }
 
